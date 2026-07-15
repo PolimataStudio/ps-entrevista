@@ -1,0 +1,1083 @@
+{
+  "metas": {
+    "version": "1.0",
+    "product": "Polímata Pilot Selection Foundation™",
+    "edition": "Enterprise Ultimate Edition",
+    "locale": "pt-BR",
+    "description": "Sistema inteligente de seleção de projetos piloto com segmentação por perfil e cálculo do IPP™.",
+    "score": {
+      "name": "IPP™",
+      "min": 0,
+      "max": 100,
+      "bands": [
+        { "min": 80, "max": 100, "label": "Projeto Prioritário" },
+        { "min": 60, "max": 79, "label": "Projeto Promissor" },
+        { "min": 40, "max": 59, "label": "Projeto Elegível" },
+        { "min": 20, "max": 39, "label": "Projeto Futuro" },
+        { "min": 0, "max": 19, "label": "Projeto Não Recomendado" }
+      ]
+    },
+    "rules": {
+      "ui": {
+        "initialScreen": true,
+        "showOnlySelectedSegmentQuestions": true,
+        "progressiveDisclosure": true
+      },
+      "scoring": {
+        "allowBonus": true,
+        "allowEliminatorySoft": true,
+        "allowEliminatoryStrong": false
+      }
+    }
+  },
+  "segmentos": [
+    {
+      "id": "igrejas",
+      "titulo": "Igrejas",
+      "descricao": "Seleção de igrejas com potencial de impacto, colaboração e geração de case replicável.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "igrejas_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da sua igreja?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "igrejas_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizada?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "igrejas_alcance",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantas pessoas frequentam seus cultos e eventos por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e visibilidade"
+        },
+        {
+          "id": "igrejas_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "igrejas_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você ou alguém da igreja tem tempo disponível para participar de testes e dar feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "igrejas_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você considera que sua igreja teria interesse em compartilhar o resultado como caso de sucesso?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "igrejas_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Sua igreja já possui alguma solução digital funcionando bem e que você não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "igrejas_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "A igreja tem algum projeto social ou ação com impacto local?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "escolas",
+      "titulo": "Escolas",
+      "descricao": "Seleção de escolas com potencial de impacto educacional, eficiência e replicabilidade.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "escolas_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da escola?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "escolas_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizada?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "escolas_alunos",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos alunos matriculados a escola tem, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "escolas_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "escolas_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Alguém da equipe pedagógica ou administrativa tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "escolas_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "A escola teria interesse em compartilhar o caso como exemplo para outras escolas?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "escolas_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "A escola já possui uma solução digital completa e bem usada que você não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "escolas_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "A escola oferece algum projeto social, curso gratuito ou ação com impacto na comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "clinicas",
+      "titulo": "Clínicas",
+      "descricao": "Seleção de clínicas e consultórios com potencial de organizar jornada, agendamento e relacionamento.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "clinicas_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da clínica?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "clinicas_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizada?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "clinicas_atendimentos",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos pacientes ou clientes a clínica atende por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "clinicas_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "clinicas_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você ou alguém da equipe tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "clinicas_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "A clínica teria interesse em compartilhar o caso como exemplo para outras clínicas?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "clinicas_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "A clínica já possui um sistema completo e bem usado que você não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "clinicas_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "A clínica oferece algum atendimento social, gratuito ou com impacto na comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "saloes",
+      "titulo": "Salões de Beleza",
+      "descricao": "Seleção de salões com necessidade de presença digital, agendamento e portfólio.",
+      "idealPerguntas": 7,
+      "perguntas": [
+        {
+          "id": "saloes_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do salão?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "saloes_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "saloes_clientes",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos clientes o salão atende por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "saloes_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "saloes_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "saloes_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros salões?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "saloes_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já tem um site, app ou sistema de agendamento bem usado e não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        }
+      ]
+    },
+    {
+      "id": "barbearias",
+      "titulo": "Barbearias",
+      "descricao": "Seleção de barbearias com foco em agendamento, presença digital e relacionamento.",
+      "idealPerguntas": 7,
+      "perguntas": [
+        {
+          "id": "barbearias_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da barbearia?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "barbearias_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizada?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "barbearias_clientes",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos clientes a barbearia atende por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "barbearias_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "barbearias_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "barbearias_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outras barbearias?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "barbearias_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já tem um site, app ou sistema de agendamento bem usado e não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        }
+      ]
+    },
+    {
+      "id": "comercio",
+      "titulo": "Comércio",
+      "descricao": "Seleção de comércio local com potencial de venda, catálogo e presença digital.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "comercio_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do comércio?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "comercio_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "comercio_clientes",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos clientes o comércio atende por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "comercio_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "comercio_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você ou alguém da equipe tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "comercio_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros comerciantes locais?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "comercio_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui um site, catálogo online ou sistema funcionando bem e não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "comercio_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "O comércio oferece algum benefício social ou ação com impacto na comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "restaurantes",
+      "titulo": "Restaurantes",
+      "descricao": "Seleção de restaurantes com potencial de cardápio, reservas e relacionamento digital.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "restaurantes_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do restaurante?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "restaurantes_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "restaurantes_clientes",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos clientes o restaurante atende por mês, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "restaurantes_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "restaurantes_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "restaurantes_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros restaurantes?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "restaurantes_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui um sistema de reservas, cardápio ou site bem usado e não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "restaurantes_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "O restaurante faz algum projeto social ou ação com impacto na comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "academias",
+      "titulo": "Academias",
+      "descricao": "Seleção de academias com potencial de organização, retenção e presença digital.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "academias_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da academia?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "academias_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizada?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "academias_alunos",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos alunos matriculados a academia tem, em média?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "academias_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "academias_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "academias_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outras academias?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "academias_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui um sistema completo e bem usado que você não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "academias_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "A academia oferece algum programa social, gratuito ou acessível para a comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "escritorios",
+      "titulo": "Escritórios",
+      "descricao": "Seleção de escritórios, consultorias e serviços profissionais com potencial de site, automação e autoridade.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "escritorios_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do escritório?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "escritorios_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "escritorios_profissionais",
+          "tipo": "numero",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Quantos profissionais atuam no escritório?",
+          "opcoes": [],
+          "medida": "estrutura",
+          "decisao": "complexidade e potencial de uso"
+        },
+        {
+          "id": "escritorios_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "escritorios_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "escritorios_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros escritórios?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "escritorios_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui uma solução digital completa e bem usada que não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "escritorios_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "O escritório oferece algum serviço social, consultoria gratuita ou ação com impacto na comunidade?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "autores",
+      "titulo": "Autores",
+      "descricao": "Seleção de autores com potencial de portfólio, presença digital e distribuição de obras.",
+      "idealPerguntas": 7,
+      "perguntas": [
+        {
+          "id": "autores_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do autor?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "autores_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado você está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "autores_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já tem site ou portfólio online funcionando bem e não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "autores_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "autores_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "autores_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros autores?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "autores_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "Você já publicou obras com impacto social, educacional ou comunitário?",
+ "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "produtos_digitais",
+      "titulo": "Produtos Digitais",
+      "descricao": "Seleção de marcas e criadores de produtos digitais com potencial de escala, automação e prova social.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "produtos_digitais_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome da marca ou produtor?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "produtos_digitais_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado você está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "produtos_digitais_usuarios",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos clientes ou usuários você estima ter nos seus produtos digitais?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "produtos_digitais_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "produtos_digitais_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "produtos_digitais_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros criadores?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "produtos_digitais_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui uma solução digital completa e bem usada que não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "produtos_digitais_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "Os seus produtos digitais têm impacto social, educacional ou de capacitação?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    },
+    {
+      "id": "infoprodutos",
+      "titulo": "Infoprodutos",
+      "descricao": "Seleção de produtores de cursos, mentorias e conteúdos pagos com potencial de conversão e organização.",
+      "idealPerguntas": 8,
+      "perguntas": [
+        {
+          "id": "infoprodutos_nome",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Qual o nome do produtor ou da empresa?",
+          "opcoes": [],
+          "medida": "identificacao",
+          "decisao": "registro e contato"
+        },
+        {
+          "id": "infoprodutos_local",
+          "tipo": "texto",
+          "peso": 1,
+          "obrigatoria": true,
+          "pergunta": "Em qual cidade e estado você está localizado?",
+          "opcoes": [],
+          "medida": "localizacao",
+          "decisao": "contexto geográfico do projeto"
+        },
+        {
+          "id": "infoprodutos_alunos",
+          "tipo": "numero",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Quantos alunos ou clientes você estima ter nos seus infoprodutos?",
+          "opcoes": [],
+          "medida": "alcance",
+          "decisao": "potencial de impacto e escala"
+        },
+        {
+          "id": "infoprodutos_necessidade",
+          "tipo": "texto",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Qual o principal problema que você quer resolver com uma solução digital?",
+          "opcoes": [],
+          "medida": "necessidade",
+          "decisao": "clareza de problema e viabilidade"
+        },
+        {
+          "id": "infoprodutos_disponibilidade",
+          "tipo": "sim_nao",
+          "peso": 10,
+          "obrigatoria": true,
+          "pergunta": "Você tem tempo para testes e feedback durante o desenvolvimento?",
+          "opcoes": ["sim", "nao"],
+          "medida": "disponibilidade",
+          "decisao": "risco operacional e colaboração"
+        },
+        {
+          "id": "infoprodutos_divulgacao",
+          "tipo": "sim_nao",
+          "peso": 8,
+          "obrigatoria": true,
+          "pergunta": "Você teria interesse em compartilhar o caso como exemplo para outros criadores de infoprodutos?",
+          "opcoes": ["sim", "nao"],
+          "medida": "divulgacao",
+          "decisao": "prova social e portfólio"
+        },
+        {
+          "id": "infoprodutos_solucao_existente",
+          "tipo": "sim_nao",
+          "peso": 7,
+          "obrigatoria": true,
+          "pergunta": "Você já possui uma plataforma completa e bem usada que não quer mudar?",
+          "opcoes": ["sim", "nao"],
+          "medida": "solucao_existente",
+          "decisao": "risco de redundância",
+          "critico": "eliminatorio_suave"
+        },
+        {
+          "id": "infoprodutos_impacto_social",
+          "tipo": "sim_nao",
+          "peso": 0,
+          "obrigatoria": false,
+          "pergunta": "Seus infoprodutos têm impacto social, educacional ou de inclusão?",
+          "opcoes": ["sim", "nao"],
+          "medida": "impacto_social",
+          "decisao": "bonificação por impacto",
+          "bonificador": 5
+        }
+      ]
+    }
+  ]
+}

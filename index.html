@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Entrevista Piloto</title>
+  
+  <!-- Meta tags SEO / Open Graph -->
+  <meta name="description" content="Participe da nossa entrevista e ajude sua organização a crescer com tecnologia.">
+  <meta property="og:title" content="Entrevista Piloto">
+  <meta property="og:description" content="Conte-nos sobre sua organização e faça parte de projetos inovadores.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://polimatastudio.github.io/ps-entrevista"> <!-- ajuste se necessário -->
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="icons/icon-192.png">
+  
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Ícones para PWA (fallback) -->
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#2B3A67">
+</head>
+<body>
+  <div id="app" role="main">
+    <!-- TELA 1: BOAS-VINDAS -->
+    <section id="boasVindas" class="tela" aria-labelledby="titulo-boas-vindas">
+      <div class="container">
+        <div class="header-icon" aria-hidden="true">✨</div>
+        <h1 id="titulo-boas-vindas">A inovação da sua organização começa hoje!</h1>
+        <p class="subtitulo">Toda organização tem potencial para evoluir. A sua também.</p>
+        <div class="info-box">
+          <ul>
+            <li><strong>⏱️</strong> Duração: menos de 5 minutos</li>
+            <li><strong>💰</strong> Sem custo</li>
+            <li><strong>📋</strong> Suas respostas serão analisadas para seleção de projetos piloto</li>
+          </ul>
+          <p class="aviso">* O envio não garante seleção. Todas as respostas serão analisadas segundo critérios estabelecidos pela Polímata Studio.</p>
+        </div>
+        <button id="btn-iniciar" class="btn-primary">Iniciar entrevista</button>
+      </div>
+    </section>
+
+    <!-- TELA 2: ESCOLHA DE SEGMENTO -->
+    <section id="segmento" class="tela" aria-labelledby="titulo-segmento">
+      <div class="container">
+        <h2 id="titulo-segmento">Qual é o perfil da sua organização?</h2>
+        <p class="descricao">Escolha o segmento que melhor representa seu negócio ou projeto.</p>
+        <div id="lista-segmentos" class="grade-segmentos">
+          <!-- Preenchido dinamicamente -->
+        </div>
+        <button id="btn-voltar-segmento" class="btn-secondary">Voltar</button>
+      </div>
+    </section>
+
+    <!-- TELA 3: ENTREVISTA DINÂMICA -->
+    <section id="entrevista" class="tela" aria-labelledby="titulo-entrevista">
+      <div class="container">
+        <div class="progresso-wrapper">
+          <div class="progresso-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+            <span class="progresso-fill" style="width:0%"></span>
+          </div>
+          <span class="progresso-texto" id="progresso-texto">0%</span>
+        </div>
+        <h2 id="titulo-entrevista" class="pergunta-titulo">Carregando...</h2>
+        <div id="conteudo-pergunta">
+          <!-- Pergunta atual -->
+        </div>
+        <div class="botoes-navegacao">
+          <button id="btn-anterior" class="btn-secondary" style="display:none;">Anterior</button>
+          <button id="btn-proximo" class="btn-primary">Próximo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELA 4: ENCERRAMENTO DA ENTREVISTA -->
+    <section id="encerramento" class="tela" aria-labelledby="titulo-encerramento">
+      <div class="container">
+        <div class="header-icon" aria-hidden="true">🙏</div>
+        <h2 id="titulo-encerramento">Obrigado por compartilhar um pouco sobre sua organização.</h2>
+        <p class="descricao">Para finalizar sua participação, precisamos apenas de algumas informações de contato.</p>
+        <button id="btn-identificacao" class="btn-primary">Continuar para identificação</button>
+      </div>
+    </section>
+
+    <!-- TELA 5: IDENTIFICAÇÃO (com StaticForms) -->
+    <section id="identificacao" class="tela" aria-labelledby="titulo-identificacao">
+      <div class="container">
+        <h2 id="titulo-identificacao">Identificação</h2>
+        <form id="form-identificacao" novalidate>
+          <!-- Campos ocultos do StaticForms -->
+          <input type="hidden" name="apiKey" value="sf_81a2b0ca7d6a2c1f6709f558">
+          <input type="hidden" name="email" id="sf-email">
+          <input type="hidden" name="message" id="sf-message">
+          <!-- Redirecionamento opcional: se quiser, pode definir um redirect para uma página de agradecimento estática, mas como já temos a tela, não usaremos. -->
+
+          <!-- Campos visíveis -->
+          <div class="campo">
+            <label for="id-nome">Nome completo *</label>
+            <input type="text" id="id-nome" required aria-required="true" placeholder="Seu nome">
+            <span class="mensagem-erro">Preencha seu nome.</span>
+          </div>
+          <div class="campo">
+            <label for="id-telefone">Telefone / WhatsApp *</label>
+            <input type="tel" id="id-telefone" required aria-required="true" placeholder="(00) 00000-0000">
+            <span class="mensagem-erro">Telefone inválido (mínimo 10 dígitos).</span>
+          </div>
+          <div class="campo">
+            <label for="id-email">E-mail *</label>
+            <input type="email" id="id-email" required aria-required="true" placeholder="seu@email.com">
+            <span class="mensagem-erro">E-mail inválido.</span>
+          </div>
+          <div class="campo dupla">
+            <div>
+              <label for="id-cidade">Cidade *</label>
+              <input type="text" id="id-cidade" required aria-required="true" placeholder="Cidade">
+              <span class="mensagem-erro">Preencha a cidade.</span>
+            </div>
+            <div>
+              <label for="id-estado">Estado *</label>
+              <input type="text" id="id-estado" required aria-required="true" placeholder="UF" maxlength="2">
+              <span class="mensagem-erro">UF com 2 letras.</span>
+            </div>
+          </div>
+          <div class="campo">
+            <label for="id-organizacao">Nome da organização *</label>
+            <input type="text" id="id-organizacao" required aria-required="true" placeholder="Nome da sua organização">
+            <span class="mensagem-erro">Preencha o nome da organização.</span>
+          </div>
+          <div class="campo">
+            <label for="id-cargo">Cargo ou função *</label>
+            <input type="text" id="id-cargo" required aria-required="true" placeholder="Ex: Pastor, Diretor, Gerente">
+            <span class="mensagem-erro">Preencha seu cargo.</span>
+          </div>
+          <div class="campo">
+            <label for="id-realidade">Conte um pouco mais sobre sua realidade</label>
+            <textarea id="id-realidade" rows="4" placeholder="Existe alguma necessidade, dificuldade ou sonho relacionado ao seu projeto que você gostaria de compartilhar?"></textarea>
+            <span class="mensagem-erro">Campo opcional.</span>
+          </div>
+          <button type="submit" class="btn-primary">Enviar participação</button>
+        </form>
+      </div>
+    </section>
+
+  <!-- TELA FINAL: AGRADECIMENTO -->
+  <section id="agradecimento" class="tela" aria-labelledby="titulo-agradecimento">
+  <div class="container">
+    <div class="header-icon" aria-hidden="true">✅</div>
+    <h2 id="titulo-agradecimento">Participação registrada!</h2>
+    <p>Sua entrevista foi concluída com sucesso.</p>
+    <p>Suas respostas serão analisadas. Entraremos em contato com os projetos comtemplados em até 10 dias úteis.</p>
+    <p class="destaque">Agradecemos imensamente pelo seu tempo e contribuição!</p>
+
+    <div class="botoes-rodape">
+      <button id="btn-reiniciar" class="btn-secondary">Voltar ao início</button>
+      <a href="https://polimatastudio.netlify.app" target="_blank" rel="noopener noreferrer" class="btn-primary" id="btn-visitar">Visitar Polímata Studio</a>
+    </div>
+  </div>
+  </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
